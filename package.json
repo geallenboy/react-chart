@@ -1,0 +1,111 @@
+{
+  "name": "@garron/react-g2plot",
+  "version": "1.0.0",
+  "description": "G2Plot for react",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib",
+    "es",
+    "lib2",
+    "es2",
+    "scripts",
+    "*.d.ts"
+  ],
+  "scripts": {
+    "dev": "dumi dev",
+    "test": "jest -u",
+    "prebuild": "npm test",
+    "build": "npm run build:es & npm run build:commonjs",
+    "postbuild": "npm run build:types",
+    "build:es": "babel src -d es --extensions .ts,.tsx --delete-dir-on-start",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src -d lib --extensions .ts,.tsx --delete-dir-on-start",
+    "build:types": "tsc --declarationDir ./lib & tsc --declarationDir ./es",
+    "build:docs": "dumi build",
+    "preversion": "npm run build",
+    "lint:eslint": "eslint --cache --max-warnings 0 \"{src,mock}/**/*.{vue,ts,tsx}\" --fix",
+    "lint:lint-staged": "lint-staged",
+    "lint:prettier": "prettier --write  \"src/**/*.{js,json,tsx,css,less,scss,vue,html,ts}\"",
+    "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\"",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@antv/g2plot": "^2.3.24",
+    "@commitlint/cli": "^16.0.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@opd/babel-preset-component": "^1.11.3",
+    "@types/eslint": "^8.2.0",
+    "@types/lodash": "^4.14.177",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-test-renderer": "^17.0.0",
+    "@types/string-template": "^1.0.2",
+    "@umijs/plugin-analytics": "^0.2.1",
+
+    "conventional-changelog-cli": "^2.1.0",
+    "cross-env": "^7.0.2",
+    "dumi": "^1.1.19",
+    "husky": "^7.0.0",
+    "jest-canvas-mock": "^2.3.0",
+    "lint-staged": "^12.1.1",
+    "lodash": "^4.17.20",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-test-renderer": "^17.0.1",
+    "string-template": "^1.0.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.5.2"
+  },
+  "author": {
+    "name": "garron",
+    "url": "https://github.com/geallenboy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:geallenboy/template-vue3-jsx-pinia-antd.git"
+  },
+  "homepage": "https://github.com/geallenboy/template-vue3-jsx-pinia-antd",
+  "keywords": [
+    "vue",
+    "ant-design-vue",
+    "vue3",
+    "ts",
+    "tsx",
+    "pinia",
+    "typescript"
+  ],
+  "license": "MIT",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
+      "prettier --write--parser json"
+    ],
+    "package.json": [
+      "prettier --write"
+    ],
+    "*.vue": [
+      "eslint --fix",
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.{scss,less,styl,html}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
+  }
+}
