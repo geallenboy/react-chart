@@ -9,5 +9,5 @@ module.exports = {
     '@babel/plugin-proposal-class-properties',
     "@babel/plugin-proposal-private-property-in-object"
   ],
-  ignore: ["src/.umi/**/*.ts",".umi"]
+  ignore: ["src/.umi/**/*.ts"]
 }
