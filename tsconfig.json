@@ -63,5 +63,5 @@
     "skipLibCheck": true
   },
   "include": ["src"],
-  "exclude": ["lib", "es"]
+  "exclude": ["lib", "es", "dist"]
 }

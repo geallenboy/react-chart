@@ -12,5 +12,8 @@ dist
 .husky
 .local
 /bin
-/src/mock
 Dockerfile
+# output
+es/
+lib/
+*.d.ts

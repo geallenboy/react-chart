@@ -1,7 +1,8 @@
-const vue3Lint = require('@garron/standard/dist/vue3Lint');
+const reactLint = require('@garron/standard/dist/reactLint');
 
-vue3Lint.rules['vue/require-prop-types'] = 'off';
+reactLint.rules['react/display-name'] = 'off'
+// reactLint.rules = {...reactLint.rules,'react/display-name':'off'}
 
 module.exports = {
-  ...vue3Lint
+  ...reactLint
 };

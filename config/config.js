@@ -1,29 +1,29 @@
 export default {
   mode: 'site',
-  title: 'G2Plot React',
+  title: 'react图表',
   logo: 'https://raw.githubusercontent.com/open-data-plan/g2plot-react/master/assets/logo.svg',
   resolve: {
     includes: ['docs'],
   },
   navs: [
-    null,
     {
-      title: 'GitHub',
-      path: 'https://github.com/open-data-plan/g2plot-react',
+      title: '指南',
+      path: '/guide',
     },
     {
-      title: 'Changelog',
-      path: 'https://github.com/open-data-plan/g2plot-react/blob/master/CHANGELOG.md',
+      title: '组件',
+      path: '/api',
+    },
+    {
+      title: 'GitHub',
+      path: 'https://github.com/geallenboy/react-chart.git',
     },
     {
       title: 'G2Plot',
       path: 'https://g2plot.antv.vision/',
     },
   ],
-  analytics: {
-    ga: 'UA-81696369-2',
-  },
   dynamicImport: {},
-  // ssr: {},
+  mfsu: {},
   exportStatic: {},
 }

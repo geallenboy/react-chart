@@ -3,7 +3,7 @@
 ## Usage
 
 ```tsx | pure
-import { AreaChart } from '@opd/g2plot-react'
+import { AreaChart } from '@garron/react-chart';
 ```
 
 <!-- <API src="" /> -->

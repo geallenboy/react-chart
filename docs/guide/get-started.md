@@ -1,26 +1,20 @@
 ---
-title: Get Started
+title: 开始
 ---
 
-## Install
-
-Install package in your work directory
+## 安装
 
 ```bash
-npm install @opd/g2plot-react
+npm install @garron/react-chart
 ```
 
-## Import
-
-Import a chart in your `React` Component
+## 导入
 
 ```ts
-import { LineChart } from '@opd/g2plot-react'
+import { LineChart } from '@garron/react-chart';
 ```
 
-## Config
-
-Config chart based on `G2Plot` [docs](https://g2plot.antv.vision/en/docs/manual/introduction)
+## 配置
 
 ```ts
 const config = {
@@ -30,8 +24,8 @@ const config = {
   smooth: true,
   meta: {
     value: {
-      max: 15,
-    },
+      max: 15
+    }
   },
   data: [
     { year: '1991', value: 3 },
@@ -42,16 +36,16 @@ const config = {
     { year: '1996', value: 6 },
     { year: '1997', value: 7 },
     { year: '1998', value: 9 },
-    { year: '1999', value: 11 },
-  ],
-}
+    { year: '1999', value: 11 }
+  ]
+};
 ```
 
-## Render
+## 案例 1
 
 ```tsx
-import React, { useCallback } from 'react'
-import { LineChart } from '@opd/g2plot-react'
+import React, { useCallback } from 'react';
+import { LineChart } from '@garron/react-chart';
 
 const config = {
   height: 400,
@@ -60,8 +54,8 @@ const config = {
   smooth: true,
   meta: {
     value: {
-      max: 15,
-    },
+      max: 15
+    }
   },
   data: [
     { year: '1991', value: 3 },
@@ -72,26 +66,26 @@ const config = {
     { year: '1996', value: 6 },
     { year: '1997', value: 7 },
     { year: '1998', value: 9 },
-    { year: '1999', value: 11 },
-  ],
-}
+    { year: '1999', value: 11 }
+  ]
+};
 
 export default () => {
   const getChart = useCallback((chart) => {
-    console.log(chart)
-  }, [])
+    console.log(chart);
+  }, []);
   const getContainer = useCallback((container) => {
-    console.log(container)
-  }, [])
-  return <LineChart {...config} ref={getContainer} chartRef={getChart} />
-}
+    console.log(container);
+  }, []);
+  return <LineChart {...config} ref={getContainer} chartRef={getChart} />;
+};
 ```
 
-## Update Data
+## 案例 2
 
 ```tsx
-import React, { useCallback, useState } from 'react'
-import { LineChart } from '@opd/g2plot-react'
+import React, { useCallback, useState } from 'react';
+import { LineChart } from '@garron/react-chart';
 
 const config = {
   height: 400,
@@ -100,8 +94,8 @@ const config = {
   smooth: true,
   meta: {
     value: {
-      max: 15,
-    },
+      max: 15
+    }
   },
   data: [
     { year: '1991', value: 3 },
@@ -112,17 +106,17 @@ const config = {
     { year: '1996', value: 6 },
     { year: '1997', value: 7 },
     { year: '1998', value: 9 },
-    { year: '1999', value: 11 },
-  ],
-}
+    { year: '1999', value: 11 }
+  ]
+};
 
 export default () => {
   const getChart = useCallback((chart) => {
-    console.log(chart)
-  }, [])
+    console.log(chart);
+  }, []);
   const getContainer = useCallback((container) => {
-    console.log(container)
-  }, [])
+    console.log(container);
+  }, []);
 
   const [data, setData] = useState([
     { year: '1991', value: 3 },
@@ -133,39 +127,34 @@ export default () => {
     { year: '1996', value: 6 },
     { year: '1997', value: 7 },
     { year: '1998', value: 9 },
-    { year: '1999', value: 11 },
-  ])
+    { year: '1999', value: 11 }
+  ]);
 
   const handleBtnClick = useCallback(() => {
     setData((items) => {
-      const last = items.pop()
+      const last = items.pop();
 
       return items.concat(last, {
         year: (+last.year + 1).toString(),
-        value: Math.random() * 10,
-      })
-    })
-  }, [])
+        value: Math.random() * 10
+      });
+    });
+  }, []);
 
   return (
     <div>
       <button onClick={handleBtnClick}>Update Data</button>
-      <LineChart
-        {...config}
-        ref={getContainer}
-        chartRef={getChart}
-        data={data}
-      />
+      <LineChart {...config} ref={getContainer} chartRef={getChart} data={data} />
     </div>
-  )
-}
+  );
+};
 ```
 
-## Update Config
+## 案例 3
 
 ```tsx
-import React, { useCallback, useState } from 'react'
-import { LineChart } from '@opd/g2plot-react'
+import React, { useCallback, useState } from 'react';
+import { LineChart } from '@garron/react-chart';
 
 const config = {
   height: 400,
@@ -174,8 +163,8 @@ const config = {
   smooth: true,
   meta: {
     value: {
-      max: 15,
-    },
+      max: 15
+    }
   },
   data: [
     { year: '1991', value: 3 },
@@ -186,45 +175,31 @@ const config = {
     { year: '1996', value: 6 },
     { year: '1997', value: 7 },
     { year: '1998', value: 9 },
-    { year: '1999', value: 11 },
-  ],
-}
+    { year: '1999', value: 11 }
+  ]
+};
 
 export default () => {
   const getChart = useCallback((chart) => {
-    console.log(chart)
-  }, [])
+    console.log(chart);
+  }, []);
   const getContainer = useCallback((container) => {
-    console.log(container)
-  }, [])
+    console.log(container);
+  }, []);
 
-  const [restConfig, setConfig] = useState({})
+  const [restConfig, setConfig] = useState({});
 
   const handleBtnClick = useCallback(() => {
     setConfig((config) => ({
-      point: config.point ? undefined : {},
-    }))
-  }, [])
+      point: config.point ? undefined : {}
+    }));
+  }, []);
 
   return (
     <div>
       <button onClick={handleBtnClick}>Update Config</button>
-      <LineChart
-        {...config}
-        ref={getContainer}
-        chartRef={getChart}
-        {...restConfig}
-      />
+      <LineChart {...config} ref={getContainer} chartRef={getChart} {...restConfig} />
     </div>
-  )
-}
-```
-
-## Use Lab Chart
-
-```tsx | pure
-import { Lab } from '@antv/g2plot'
-import { BaseChart } from '@opd/g2plot'
-
-export default () => <BaseChart chart={Lab.MultiView} data={[]} />
+  );
+};
 ```

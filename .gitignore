@@ -36,11 +36,17 @@ package-lock.json
 npm-debug.log
 testem.log
 /typings
+# build Output
+lib
+es
+dist
+*.css
+# umi
 
-# e2e
-/e2e/src/*.js
-/e2e/src/*.map
-/cypress/screenshots
+.umi-production
+dist
+es/.umi
+lib/.umi
 
 # System Files
 .DS_Store

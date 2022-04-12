@@ -1,18 +1,14 @@
 ---
-title: Guide
+title: 介绍
 nav:
   order: 0
 ---
 
-## What
+` react chart` 基于 G2Plot 和 react 封装的图表集合
 
-`G2Plot React` is a chart component set powered by [`G2Plot`](https://g2plot.antv.vision/) and developed for `React`.
+## 特性
 
-## Features
-
-- Fully support `G2Plot` charts, and will support new chart at first time.
-- Developed for `React`, and easily use.
-- Native support for `TypeScript`.
-- **100%** unit test coverage
-
-Let's [get started](/guide/get-started)
+- 完全支持 G2Plot 图表
+- 专为`React`开发，使用方便。
+- 拥抱 `TypeScript`
+- **100%** 单元测试覆盖率
