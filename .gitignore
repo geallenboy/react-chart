@@ -42,7 +42,7 @@ es
 dist
 *.css
 # umi
-
+.umi
 .umi-production
 dist
 es/.umi
