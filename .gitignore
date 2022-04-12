@@ -1,11 +1,13 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# compiled output
+# output
 /dist
 /dist-ssr
 /tmp
 /out-tsc
-
+/lib
+/es
+/dist
 # dependencies
 /node_modules
 *.local
@@ -23,11 +25,11 @@ package-lock.json
 
 # IDE - VSCode
 .vscode/*
-# !.vscode/settings.json
-# !.vscode/tasks.json
-# !.vscode/launch.json
-# !.vscode/extensions.json
 
+# Optional eslint cache
+.eslintcache
+# Typescript v1 declaration files
+typings/
 # misc
 /.sass-cache
 /connect.lock
@@ -36,15 +38,11 @@ package-lock.json
 npm-debug.log
 testem.log
 /typings
-# build Output
-lib
-es
-dist
-*.css
+
 # umi
 .umi
 .umi-production
-dist
+
 es/.umi
 lib/.umi
 
